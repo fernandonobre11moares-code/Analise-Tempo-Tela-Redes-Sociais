@@ -5,7 +5,7 @@ Projeto de estudo com dados fictícios, desenvolvido para praticar limpeza de da
 
 
 
-[dashboard-geral](imagens/dashboard-geral.png)
+![dashboard-geral](imagens/dashboard-geral.png)
 
   
 Sobre o projeto
