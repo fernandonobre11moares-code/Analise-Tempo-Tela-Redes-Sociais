@@ -5,8 +5,9 @@ Projeto de estudo com dados fictícios, desenvolvido para praticar limpeza de da
 
 Dashboard final
 
-Mostrar Imagem
+[texto alternativo](caminho/da/imagem.png). 
 
+  
 Sobre o projeto
 
 A base simula sessões de uso de aplicativos de redes sociais, streaming e jogos, com 5 tabelas relacionadas em esquema snowflake: Usuários → Dispositivos → Sessões ← Apps ← Categorias.
