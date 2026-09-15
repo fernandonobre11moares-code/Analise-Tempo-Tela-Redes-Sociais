@@ -3,7 +3,7 @@ Análise de Tempo de Tela em Redes Sociais — Power BI
 
 Projeto de estudo com dados fictícios, desenvolvido para praticar limpeza de dados, modelagem relacional em esquema snowflake, Time Intelligence e construção de dashboard no Power BI.
 
-Dashboard final
+
 
 [Dashboard final](imagens/dashboard-geral.png)
 
@@ -22,13 +22,12 @@ App duplicado (Instagram cadastrado duas vezes com nomes quase idênticos)
 Tipo de Dispositivo com 5 variações de escrita para as mesmas 3 categorias reais
 Modelo de dados
 
-Mostrar Imagem
+![Modelo de relacionamento](imagens/modelo-relacionamento.png)
 
 Esquema snowflake com 5 tabelas de negócio mais uma Tabela Calendário criada via DAX (CALENDAR()), necessária para as medidas de Time Intelligence.
 
-Limpeza de dados
 
-Mostrar Imagem
+Limpeza de dados
 
 Tratamento feito no Power Query, com atenção a:
 
@@ -47,9 +46,7 @@ Evolução do tempo de tela ao longo do tempo (gráfico de linha)
 Tempo de tela por Categoria de App e por Tipo de Dispositivo
 Tabela de Status para investigação de qualidade dos dados
 Arquivos neste repositório
-Pasta/Arquivo	Descrição
-/dados	Dados brutos, sem tratamento — para quem quiser praticar o mesmo desafio
-/imagens	Prints do dashboard final, modelo de dados e limpeza no Power Query
+[Dados-Brutos](dados/Screentime_Bruto_Analista.xlsx)
 Aviso
 
 Dados fictícios, gerados exclusivamente para fins de estudo.
