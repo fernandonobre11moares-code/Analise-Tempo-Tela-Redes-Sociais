@@ -5,7 +5,7 @@ Projeto de estudo com dados fictícios, desenvolvido para praticar limpeza de da
 
 Dashboard final
 
-[dashboard-geral.png](caminho/da/imagem.png). 
+[Dashboard final](imagens/dashboard-geral.png)
 
   
 Sobre o projeto
