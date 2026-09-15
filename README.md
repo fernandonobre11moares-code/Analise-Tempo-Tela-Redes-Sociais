@@ -1,133 +1,54 @@
 # Analise-Tempo-Tela-Redes-Sociais
+Análise de Tempo de Tela em Redes Sociais — Power BI
 
-📊 Análise de Uso de Tempo de Tela com Power BI
-📌 Sobre o projeto
+Projeto de estudo com dados fictícios, desenvolvido para praticar limpeza de dados, modelagem relacional em esquema snowflake, Time Intelligence e construção de dashboard no Power BI.
 
-Este projeto foi desenvolvido com o objetivo de aprimorar meus conhecimentos em Power BI e Análise de Dados, simulando um projeto de tratamento, modelagem e análise de dados.
+Dashboard final
 
-A análise utiliza uma base relacionada ao uso de dispositivos, aplicativos e sessões de utilização, passando por etapas de exploração, limpeza, transformação, modelagem e visualização dos dados.
+Mostrar Imagem
 
-🎯 Objetivo
+Sobre o projeto
 
-O objetivo principal do projeto foi transformar dados brutos em informações que permitam analisar o comportamento de uso de dispositivos e aplicativos.
+A base simula sessões de uso de aplicativos de redes sociais, streaming e jogos, com 5 tabelas relacionadas em esquema snowflake: Usuários → Dispositivos → Sessões ← Apps ← Categorias.
 
-Durante o desenvolvimento, foram trabalhadas as seguintes etapas:
+Os dados brutos (pasta /dados) foram gerados com problemas reais de qualidade, de propósito, para simular uma base de produção:
 
-Exploração da base de dados;
-Identificação de problemas de qualidade;
-Limpeza e transformação dos dados;
-Validação das informações;
-Modelagem dos dados;
-Criação de análises e indicadores;
-Desenvolvimento de dashboard no Power BI;
-Extração de insights.
-🛠️ Tecnologias utilizadas
-Power BI
-Power Query
-DAX
-Microsoft Excel
-GitHub
-🗂️ Estrutura da base
+Datas em 3 formatos diferentes na mesma coluna
+Valores nulos em Idade, Categoria e Duração
+Duração negativa (erro de medição) e um outlier de 850 minutos numa única sessão
+Colisão de ID: duas sessões diferentes compartilhando o mesmo identificador
+App duplicado (Instagram cadastrado duas vezes com nomes quase idênticos)
+Tipo de Dispositivo com 5 variações de escrita para as mesmas 3 categorias reais
+Modelo de dados
 
-A base de dados utilizada no projeto possui as seguintes tabelas:
+Mostrar Imagem
 
-Tabela	Descrição
-Usuarios	Informações dos usuários
-Dispositivos	Informações dos dispositivos utilizados
-Categorias	Categorias dos aplicativos
-Apps	Informações dos aplicativos
-Sessoes	Registros das sessões de utilização
-🧹 Tratamento e limpeza dos dados
+Esquema snowflake com 5 tabelas de negócio mais uma Tabela Calendário criada via DAX (CALENDAR()), necessária para as medidas de Time Intelligence.
 
-A etapa de preparação dos dados foi realizada utilizando o Power Query.
+Limpeza de dados
 
-Entre as principais atividades realizadas estão:
+Mostrar Imagem
 
-Promoção da primeira linha para cabeçalho;
-Ajuste dos tipos de dados;
-Investigação de valores nulos;
-Verificação de duplicidades;
-Validação da unicidade dos identificadores;
-Padronização de textos;
-Padronização das siglas dos estados;
-Investigação de inconsistências nos IDs dos aplicativos;
-Tratamento de registros duplicados na tabela Apps;
-Validação dos IDs utilizados entre as tabelas;
-Tratamento da coluna de duração das sessões.
-🔎 Exemplo de validação
+Tratamento feito no Power Query, com atenção a:
 
-Na tabela Apps, foi identificada uma duplicidade relacionada ao mesmo aplicativo.
+Padronização de texto (Tipo Dispositivo, Gênero)
+Preservação de nulos, sem inventar valores para dados ausentes
+Coluna de Status separando "Confere", "Erro do App" (negativos) e "Revisar" (outliers como o valor 850)
+Resolução de colisão de ID sem perda de dados reais
+Unificação de app duplicado, redirecionando todas as sessões afetadas antes de excluir a linha duplicada
+Medidas DAX
+Tempo Total de Tela (minutos e horas), excluindo registros com problema
+Tempo de Tela do Mês Anterior, usando PREVIOUSMONTH
+Variação Percentual Mês a Mês, usando DIVIDE
+Dashboard
+Cartões com Tempo Total de Tela e Variação % do mês
+Evolução do tempo de tela ao longo do tempo (gráfico de linha)
+Tempo de tela por Categoria de App e por Tipo de Dispositivo
+Tabela de Status para investigação de qualidade dos dados
+Arquivos neste repositório
+Pasta/Arquivo	Descrição
+/dados	Dados brutos, sem tratamento — para quem quiser praticar o mesmo desafio
+/imagens	Prints do dashboard final, modelo de dados e limpeza no Power Query
+Aviso
 
-Após a análise, foi mantido um único identificador para o aplicativo e os registros relacionados na tabela Sessoes foram ajustados para preservar a consistência entre as tabelas.
-
-Na coluna de duração das sessões também foram identificados valores negativos, que foram classificados para revisão durante o processo de tratamento.
-
-🧠 Modelagem dos dados
-
-Após a etapa de tratamento, os dados foram organizados para permitir a criação dos relacionamentos necessários no Power BI.
-
-A modelagem considera as tabelas relacionadas aos usuários, dispositivos, categorias, aplicativos e sessões.
-
-
-
-
-📊 Dashboard
-
-O dashboard foi desenvolvido no Power BI com o objetivo de transformar os dados tratados em informações visuais e facilitar a análise dos padrões de utilização.
-
-Visão geral
-
-
-
-
-Análises
-
-
-
-
-🔎 Principais insights
-
-Nesta seção serão apresentados os principais insights identificados a partir das análises realizadas no Power BI.
-
-Os resultados serão utilizados para compreender padrões relacionados a:
-
-Uso dos aplicativos;
-Tempo de utilização;
-Sessões;
-Dispositivos;
-Categorias;
-Perfil dos usuários.
-
-Os insights desta seção foram obtidos diretamente a partir das análises realizadas no dashboard.
-
-📚 Aprendizados
-
-Este projeto permitiu desenvolver e praticar conhecimentos em:
-
-Power Query;
-Limpeza e transformação de dados;
-Validação da qualidade dos dados;
-Tratamento de duplicidades;
-Padronização de informações;
-Modelagem de dados;
-DAX;
-Criação de dashboards;
-Análise e interpretação de dados;
-Documentação de projetos.
-🚀 Próximos passos
-
-Pretendo continuar desenvolvendo minhas habilidades em:
-
-DAX;
-Modelagem dimensional;
-Power BI;
-Análises mais aprofundadas;
-Visualização de dados;
-Projetos de portfólio voltados para Análise de Dados.
-👤 Autor
-
-Fernando
-
-Projeto desenvolvido como parte do meu processo de aprendizado e desenvolvimento profissional na área de Análise de Dados e Business Intelligence.
-
-LinkedIn
+Dados fictícios, gerados exclusivamente para fins de estudo.
